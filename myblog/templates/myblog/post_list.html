@@ -4,7 +4,14 @@
         <title>Eve's blog</title>
     </head>
     <body>
-        <p>Hello there!</p>
-        <p>It works!</p>
+        <p>Hello there! Here are our posts</p>
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
+
     </body>
 </html>
